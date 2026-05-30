@@ -16,22 +16,20 @@ Then they pass that context to `opencode run`.
 
 ## Usage
 
-Run one task:
-
 ```bash
-./opencode-ralph/once.sh
-```
+# Run one task
+./once.sh
 
-Run a few tasks while AFK:
+# Run N iterations (stops early on "NO MORE TASKS")
+./afk.sh 5
 
-```bash
-./opencode-ralph/afk.sh 5
-```
+# Select model/variant interactively
+./once.sh --pick
+./afk.sh --pick 5
 
-`afk.sh` stops early if OpenCode prints:
-
-```text
-<promise>NO MORE TASKS</promise>
+# Specify model and/or variant directly
+./once.sh -m "anthropic/claude-sonnet-4-5" -v max
+./afk.sh -m "openai/gpt-5" 5
 ```
 
 ## Note
